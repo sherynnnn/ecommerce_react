@@ -110,7 +110,7 @@ router.get('/by-category', async (req, res) => {
     const products = await Product.find({ category });
     res.status(200).json(products);
   } catch (err) {
-    res.status(400).json({ error: 'Error fetching products by category: ' + err.message });
+    res.status(400).send({ error: 'Error fetching products by category: ' + err.message });
   }
 });
 
