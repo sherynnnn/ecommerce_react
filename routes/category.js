@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
     const category = await Product.distinct('category');
     res.status(200).json(category);
   } catch (err) {
-    res.status(400).json({ error: 'Error fetching category: ' + err.message });
+    res.status(400).send({ error: 'Error fetching category: ' + err.message });
   }
 });
 
